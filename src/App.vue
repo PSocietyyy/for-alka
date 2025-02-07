@@ -47,7 +47,7 @@ const openLetter = () => {
 };
 
 const nextSlide = () => {
-  if (letterSlide.value < 7) {
+  if (letterSlide.value < 8) {
     letterSlide.value++;
   }
 };
@@ -115,6 +115,7 @@ const regretMessages = ref([
   "Setiap hari aku merenung, berharap bisa memperbaiki semuanya dan mengembalikan kebahagiaan kita.",
   "Aku Seharusnya tidak mempermasalahkan hobimu, karena itu merupakan bagian dari siapa dirimu.",
   "Aku hanya ingin tahu... apakah aku masih bisa masuk ke dalam duniamu lagi? 💌",
+  "Aku tidak akan memaksa, dan aku terima apapun jawabanmu",
 ]);
 </script>
 
@@ -153,9 +154,7 @@ const regretMessages = ref([
       >
         Untuk {{ currentCallName }} 💜
       </h1>
-      <p class="mt-4 text-lg opacity-80 text-slate-700">
-        Selamat Hari Valentine....
-      </p>
+      <p class="mt-4 text-lg opacity-80 text-slate-700">Permintaan maafku...</p>
 
       <button
         @click="handleSecretClick"
@@ -214,6 +213,7 @@ const regretMessages = ref([
         <p v-if="letterSlide === 5">{{ regretMessages[5] }}</p>
         <p v-if="letterSlide === 6">{{ regretMessages[6] }}</p>
         <p v-if="letterSlide === 7">{{ regretMessages[7] }}</p>
+        <p v-if="letterSlide === 8">{{ regretMessages[8] }}</p>
 
         <!-- Navigasi Slide -->
         <div class="mt-4 flex justify-between">
@@ -226,7 +226,7 @@ const regretMessages = ref([
           </button>
           <button
             @click="nextSlide"
-            :disabled="letterSlide === 7"
+            :disabled="letterSlide === 8"
             class="bg-purple-500 text-white py-2 px-4 rounded-lg hover:bg-purple-400 transition disabled:opacity-50"
           >
             Selanjutnya
